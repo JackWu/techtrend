@@ -40,6 +40,9 @@
                 <user name="admin1@example.com"
                         password="admin1"
                         authorities="ROLE_USER,ROLE_ADMIN"/>
+				<user name="test"
+                        password="test"
+                        authorities="ROLE_USER,ROLE_ADMIN"/>
             </user-service>
         </authentication-provider>
     </authentication-manager>

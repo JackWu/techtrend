@@ -1,5 +1,7 @@
 package com.techtrend.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -30,8 +32,14 @@ public class VehicleServiceImpl implements VehicleService{
 	}
 
 	@Override
-	public Vehicle findVehicleByVehicleNo(String vehicleNo) {
-		return vehicleDao.findByVehicleNo(vehicleNo);
+	public Vehicle findVehicleById(String id) {
+		return vehicleDao.findVehicleById(id);
+	}
+	
+
+	@Override
+	public List<Vehicle> getVehicles() {
+		return vehicleDao.getVehicles();
 	}
 
 

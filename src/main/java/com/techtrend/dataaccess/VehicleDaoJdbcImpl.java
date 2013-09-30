@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -69,18 +70,25 @@ public class VehicleDaoJdbcImpl implements VehicleDao {
 
 	@Override
 	@Transactional(readOnly=true)
-	public Vehicle findByVehicleNo(String vehicleNo) {
-        if (vehicleNo == null) {
+	public Vehicle findVehicleById(String id) {
+        if (id == null) {
             throw new IllegalArgumentException("vehicleNo cannot be null");
         }
         try {
-            return jdbcOperations.queryForObject(VEHICLE_QUERY + "vehicle_no = ?", VEHICLE_MAPPER, vehicleNo);
+            return jdbcOperations.queryForObject(VEHICLE_QUERY + "id = ?", VEHICLE_MAPPER, id);
         } catch (EmptyResultDataAccessException notFound) {
             return null;
         }
 	}
 	
-	private static final String VEHICLE_QUERY = "select id color, wheel, seat from vehicle where ";
+	
+    @Override
+    @Transactional(readOnly = true)
+    public List<Vehicle> getVehicles() {
+        return jdbcOperations.query(VEHICLE_QUERY+" id like ? order by id", VEHICLE_MAPPER, "%");
+    }
+	
+	private static final String VEHICLE_QUERY = "select id, color, wheel, seat from vehicle where ";
 	private static final RowMapper<Vehicle> VEHICLE_MAPPER = new VehicleRowMapper("calendar_users."); 
 	
     static class VehicleRowMapper implements RowMapper<Vehicle> {
@@ -97,7 +105,7 @@ public class VehicleDaoJdbcImpl implements VehicleDao {
 
         public Vehicle mapRow(ResultSet rs, int rowNum) throws SQLException {
             Vehicle vehicle = new Vehicle();
-            vehicle.setVehicleNo(rs.getString("vehicle_no"));
+            vehicle.setId(rs.getString("id"));
             vehicle.setColor(rs.getString("color"));
             vehicle.setWheel(rs.getInt("wheel"));
             vehicle.setSeat(rs.getInt("seat"));

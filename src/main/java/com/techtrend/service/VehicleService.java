@@ -1,14 +1,19 @@
 package com.techtrend.service;
 
+import java.util.List;
+
 import com.techtrend.domain.Vehicle;
 
 
 
 public interface VehicleService {
 	
-	public void createVehicle(Vehicle vehicle);
+	void createVehicle(Vehicle vehicle);
 	
-	public Vehicle findVehicleByVehicleNo(String vehicleNo);
+	Vehicle findVehicleById(String id);
+	
+	
+	List<Vehicle> getVehicles();
 
 
 }

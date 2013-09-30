@@ -1,7 +1,7 @@
 package com.techtrend.domain;
 
 public class Vehicle {
-	private String vehicleNo;
+	private String id;
 	private String color;
 	private int wheel;
 	private int seat;
@@ -10,19 +10,22 @@ public class Vehicle {
 		
 	}
 	
-	public Vehicle(String vehicleNo, String color, int wheel, int seat){
-		this.vehicleNo = vehicleNo;
+	public Vehicle(String id, String color, int wheel, int seat){
+		this.id = id;
 		this.color = color;
 		this.wheel = wheel;
 		this.seat = seat;
 	}
 	
-	public String getVehicleNo() {
-		return vehicleNo;
+
+	public String getId() {
+		return id;
 	}
-	public void setVehicleNo(String vehicleNo) {
-		this.vehicleNo = vehicleNo;
+
+	public void setId(String id) {
+		this.id = id;
 	}
+
 	public String getColor() {
 		return color;
 	}
