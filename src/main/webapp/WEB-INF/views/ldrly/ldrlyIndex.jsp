@@ -7,5 +7,10 @@
 <jsp:include page="../includes/header.jsp"/>
 
 LDRLY Development take home
+<ul>
+<li><a href="/techtrend/ldrly/sendState">sendState</a></li>
+<li><a href="/techtrend/ldrly/getState">getState</a></li>
+<li><a href="/techtrend/ldrly/getLeaderBoard">getLeaderBoard</a></li>
+</ul>
 
 <jsp:include page="../includes/footer.jsp"/>

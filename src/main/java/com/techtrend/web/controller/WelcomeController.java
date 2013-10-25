@@ -23,9 +23,9 @@ public class WelcomeController {
 	public String sendState(){
 		return "ldrly/sendState";
 	}
-    @RequestMapping("/ldrly/getLeaderBorder")
+    @RequestMapping("/ldrly/getLeaderBoard")
 	public String ldryGetLeaderBoarder(){
-		return "ldrly/getLeaderBoarder";
+		return "ldrly/getLeaderBoard";
 	}
     @RequestMapping("/ldrly/getState")
 	public String ldryGetState(){

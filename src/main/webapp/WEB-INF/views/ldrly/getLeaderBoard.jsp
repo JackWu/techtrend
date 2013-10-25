@@ -11,17 +11,20 @@
 <li><a href="/techtrend/ldrly/getLeaderBoard">getLeaderBoard</a></li>
 </ul>
 
-	<input id="username" type=text placeholder="username"><button onclick="jsonPost()">submit</button>
+
+//getLeaderBoard
+
+<input id="state" type=text placeholder="state"><button onclick="jsonPost()">submit</button>
 
 <script>
 function jsonPost(url){
-		var url = "http://localhost:3002/collections/test";
+		var url = "http://localhost:3002/getLeaderBoard/ldrly";
 		$.ajax(
 				   {
 				    url:url
-				   ,type: "post"
+				   ,type: "POST"
 				   ,contentType: "application/json; charset=utf-8"
-				   ,data:{}
+				   ,data:{"state":"xx"}
 				   ,success: function(data){
 					   
 	
@@ -36,6 +39,5 @@ function jsonPost(url){
 }
 	
 </script>
-
 
 <jsp:include page="../includes/footer.jsp"/>

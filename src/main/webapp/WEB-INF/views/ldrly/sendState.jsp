@@ -6,19 +6,31 @@
 <c:set var="pageTitle" value="" scope="request" />
 <jsp:include page="../includes/header.jsp" />
 
+
+		
+<ul>
+<li><a href="/techtrend/ldrly/sendState">sendState</a></li>
+<li><a href="/techtrend/ldrly/getState">getState</a></li>
+<li><a href="/techtrend/ldrly/getLeaderBoard">getLeaderBoard</a></li>
+</ul>
+
 	<input id="username" type=text placeholder="username"><input
 		id="state" type=text placeholder="state" /><input id="value" type=text
 		placeholder="value" /> <button onclick="jsonPost()">submit</button>
 
 <script>
 function jsonPost(url){
-		var url = "http://localhost:3002/collections/test";
+		var username = $("#username").val()
+		console.log(username);
+		var data = {username: username};
+		console.log(data);
+		var url = "http://localhost:3002/sendState/ldrly";
 		$.ajax(
 				   {
 				    url:url
 				   ,type: "post"
-				   ,contentType: "application/json; charset=utf-8"
-				   ,data:{}
+				   ,contentType: "application/json"
+				   ,data:JSON.stringify(data)
 				   ,success: function(data){
 					   
 	
