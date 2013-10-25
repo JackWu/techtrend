@@ -13,6 +13,7 @@
           }
         </style>
 
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
           <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>

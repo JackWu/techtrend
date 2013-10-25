@@ -14,4 +14,23 @@ public class WelcomeController {
     public String welcome() {
         return "index";
     }
+    
+    @RequestMapping("/ldrly")
+	public String ldryIndex(){
+		return "ldrly/ldrlyIndex";
+	}
+    @RequestMapping("/ldrly/sendState")
+	public String sendState(){
+		return "ldrly/sendState";
+	}
+    @RequestMapping("/ldrly/getLeaderBorder")
+	public String ldryGetLeaderBoarder(){
+		return "ldrly/getLeaderBoarder";
+	}
+    @RequestMapping("/ldrly/getState")
+	public String ldryGetState(){
+		return "ldrly/getState";
+	}
+    
+    
 }
