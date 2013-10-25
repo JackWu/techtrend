@@ -19,12 +19,13 @@
 <script>
 function jsonPost(url){
 		var url = "http://localhost:3002/getLeaderBoard/ldrly";
+		var data = {username:"xxx"};
 		$.ajax(
 				   {
 				    url:url
 				   ,type: "POST"
 				   ,contentType: "application/json; charset=utf-8"
-				   ,data:{"state":"xx"}
+				   ,data:JSON.stringify(data)
 				   ,success: function(data){
 					   
 	

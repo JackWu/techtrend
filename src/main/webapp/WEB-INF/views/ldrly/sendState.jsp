@@ -20,7 +20,7 @@
 
 <script>
 function jsonPost(url){
-		var username = $("#username").val()
+		var username = $("#username").val();
 		console.log(username);
 		var data = {username: username};
 		console.log(data);

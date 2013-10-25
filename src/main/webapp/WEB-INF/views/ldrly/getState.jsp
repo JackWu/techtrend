@@ -16,12 +16,13 @@
 <script>
 function jsonPost(url){
 		var url = "http://localhost:3002/collections/test";
+		var data = {username:"xxx"};
 		$.ajax(
 				   {
 				    url:url
 				   ,type: "post"
 				   ,contentType: "application/json; charset=utf-8"
-				   ,data:{}
+				   ,data:JSON.stringify(data)
 				   ,success: function(data){
 					   
 	
